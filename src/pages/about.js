@@ -5,7 +5,6 @@ import Layout from '../components/layout'
 
 const AboutPage = () => {
   return( <Layout pageTitle="About Me">
-            <h1>About Me : </h1>
             <p>lorem ipsum dolor sit amet</p>
             <p>lorem ipsum dolor sit amet</p>
             <p>lorem ipsum dolor sit amet</p>
