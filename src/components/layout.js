@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import {container,
         heading,
         navLinks,
-        navLinkItem,
         navLinkText } from './layout.module.css'
 
 const Layout = ({pageTitle, children}) => {
