@@ -1,15 +1,15 @@
 import React from 'react'
-import Layout from '../components/layout'
-import { graphql } from 'gatsby'
-import {MDXRenderer} from 'gatsby-plugin-mdx'
+import Layout from '../../components/layout'
+import {  Link, graphql } from 'gatsby' //Link,
+import {navLinkText} from '../../components/layout.module.css'
 
 const BlogPage = ({data}) => {
     return  <Layout pageTitle="Blog Page">
                 {data.allMdx.nodes.map(node => (
                         <article key={node.id}> 
                             <h2>{node.frontmatter.title}</h2>
+                            <Link to={`/blog/${node.slug}`} className={navLinkText}>{node.frontmatter.title}</Link>
                             <p>Posted on : {node.frontmatter.date}</p>
-                            <MDXRenderer>{node.body}</MDXRenderer>
                         </article> )
                 )}
             </Layout>
@@ -24,7 +24,7 @@ query {
           title
         }
         id
-        body
+        slug
       }
     }
   }
